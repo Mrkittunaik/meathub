@@ -206,6 +206,30 @@ header{padding:calc(6px + env(safe-area-inset-top,0px)) 12px 8px;gap:6px 8px}
 .cc2{padding:10px}.cc2 img{width:72px;height:72px}.cc2 h5{font-size:14px;margin:8px 0 2px}.cc2 small{font-size:11px}
 .g4{gap:10px}.cp{font-size:13px;padding:3px 9px;margin-bottom:6px}.fm input{padding:11px;font-size:14px}.fm .btn2{padding:11px}
 }
+
+/* --- section colors: crimson hero, white body, black footer --- */
+body{background:#fff}
+.hero{background:#B22222;background:linear-gradient(135deg,#B22222 0%,#8f1a1a 100%);color:#fff}
+.hero .txt h2,.hero .txt h3,.hero .txt p,.hero .price{color:#fff}
+.hero .info p,.hero .info h4,.hero .info li,.hero .info ul{color:var(--tx)}
+.hero .info h4{color:var(--tx)}
+.hero .btn{background:#fff;color:#B22222}
+.hero .wm{color:#fff;opacity:.1}
+.hero .wm g[style]{fill:#B22222!important}
+.hero .arc path{stroke:rgba(255,255,255,.7)}
+.hero .arrows button{background:#fff}
+.hero .arrows button svg{stroke:#B22222}
+.hero .plate img{border-color:#fff}
+.band,.shop,.view{background:#fff}
+.ft{position:relative;z-index:1;background:#000;color:#cfcfcf;padding:56px 0 0}
+.ft .wrap{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+.ft h5{color:#fff;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.ft .fb{font-size:26px;font-weight:900;color:#fff;margin-bottom:10px}.ft .fb em{font-style:normal;color:#e24b4b}
+.ft p,.ft a{font-size:14px;line-height:1.8;color:#cfcfcf;text-decoration:none;display:block}
+.ft a:hover{color:#fff}
+.ft .cp{margin-top:40px;padding:18px 0;border-top:1px solid #222;text-align:center;font-size:13px;color:#8a8a8a}
+@media(max-width:860px){.ft .wrap{grid-template-columns:1fr 1fr}.ft{padding-bottom:70px}}
+@media(max-width:480px){.ft .wrap{grid-template-columns:1fr}}
 </style></head><body>
 
 <header><div class='logo' onclick="location.hash='home'" style='cursor:pointer'><svg class='lg' viewBox='0 0 64 56' aria-label='Charminar'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g fill='#fff'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg><span class='lt'><small>HYDERABAD</small><b>Meat<em>Hub</em></b></span></div><div class='loc' id='loc' onclick='openLoc()'><b id='lb1'>Set location &#9662;</b><span id='lb2'>Tap to choose delivery area</span></div><input class='search' placeholder='Search for any delicious...'>
@@ -213,17 +237,23 @@ header{padding:calc(6px + env(safe-area-inset-top,0px)) 12px 8px;gap:6px 8px}
 <button class="cart" data-cn aria-label="Cart" onclick="location.hash='cart'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9H7.5z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg><span id='cc'>Cart</span></button></header>
 <div class='lm' id='lm'><div class='lb' id='lbx'></div></div>
 <div id='v-home'>
-<main>
+<div class='hero'><main>
 <div class="txt"><h2>Fresh</h2><h3 id="nm">Whole Chicken</h3><p id="ds"></p><div class="price" id="pr"></div><div class="chips" id="ch"></div><div class="info" id="inf"><img id="ii" alt=""><div><h4 id="ih"></h4><p id="ip"></p><ul id="iu"></ul></div></div><button class="btn">Order now</button></div>
 <div class="stage" id="stage"><svg class='wm' viewBox='0 0 64 56' aria-hidden='true'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g style='fill:var(--bg)'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg>
 <svg class="arc" viewBox="0 0 660 470" preserveAspectRatio="none"><path d="M66 254 C90 150 200 60 337 56 C474 60 584 150 607 254" fill="none" stroke="#d11a4f" stroke-width="2" stroke-dasharray="14 18" stroke-linecap="round"/></svg>
 <div class="arrows"><button class="up" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 20V4M5 11l7-7 7 7"/></svg></button><button class="down" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg></button></div>
-</div></main>
+</div></main></div>
 <section class='band'><div class='wrap'><div class='bn'><div class='bt' id='bt'></div><button class='nx' id='bn' aria-label='Next'>&rsaquo;</button><div class='bd' id='bd'></div></div><div class='crw'><button class='cb l' id='cl' aria-label='Scroll left'>&lsaquo;</button><div class='cr' id='cr'></div><button class='cb r' id='crb' aria-label='Scroll right'>&rsaquo;</button></div></div></section>
 <section class='shop'><div class='wrap'><button class='fl'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round'><path d='M4 7h10M18 7h2M4 17h2M10 17h10'/><circle cx='16' cy='7' r='2'/><circle cx='8' cy='17' r='2'/></svg>Filters</button><div class='cl'><span id='cnt'></span></div><div class='pg' id='pg'></div></div></section>
 </div>
 <div class='view' id='v-list'></div><div class='view' id='v-categories'></div><div class='view' id='v-stores'></div><div class='view' id='v-offers'></div><div class='view' id='v-login'></div><div class='view' id='v-cart'></div>
 <div class='tabbar'><a href='#home'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a><a href='#all'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M8 9V6h8v3"/></svg>Shop</a><a href='#offers'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg>Offers</a><a href='#cart' data-cn><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d="M6 6h15l-1.5 9H7.5z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg>Cart</a><a href='#login'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile</a></div>
+<footer class='ft'><div class='wrap'>
+<div><div class='fb'>Meat<em>Hub</em></div><p>Fresh, hygienic meat delivered across Hyderabad. Cut to order, chilled and delivered fast.</p></div>
+<div><h5>Explore</h5><a href='#home'>Home</a><a href='#all'>All Items</a><a href='#categories'>Categories</a><a href='#offers'>Offers</a></div>
+<div><h5>Company</h5><a href='#stores'>Stores</a><a href='#login'>Login</a><a href='#cart'>Cart</a></div>
+<div><h5>Location</h5><p>Hyderabad, Telangana, India</p></div>
+</div><div class='wrap'><div class='cp' style='grid-column:1/-1'>&copy; 2026 Hyderabad MeatHub. All rights reserved.</div></div></footer>
 <script>
 const items=[
 ["Whole Chicken","Farm-fresh skinless whole bird, cleaned and ready to cook.","₹260 / kg","images/item-01.webp"],
