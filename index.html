@@ -299,6 +299,49 @@ body{background:#fff}
 .hero .hx .arrows button:hover{transform:scale(1.1)}
 }
 .lb{position:relative}.lx{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;border-radius:50%;background:#f1f1f1;color:#333;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;z-index:2}.lx:hover{background:#e2e2e2}.lb h2{padding-right:36px}
+
+/* --- hero motion --- */
+.hero{position:relative;overflow:hidden}
+.hero:before,.hero:after{content:'';position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.hero:before{width:560px;height:560px;top:-200px;left:-160px;background:radial-gradient(circle,rgba(255,110,110,.38),transparent 65%);animation:drift 14s ease-in-out infinite alternate}
+.hero:after{width:480px;height:480px;bottom:-220px;right:-120px;background:radial-gradient(circle,rgba(0,0,0,.35),transparent 65%);animation:drift 17s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.15)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+@keyframes pop{from{opacity:0;transform:scale(.55) rotate(-25deg)}}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+@keyframes pillin{from{opacity:0;translate:70px 0}}
+@keyframes pulse{0%{box-shadow:0 12px 28px rgba(0,0,0,.35),0 0 0 0 rgba(255,255,255,.55)}70%,100%{box-shadow:0 12px 28px rgba(0,0,0,.35),0 0 0 18px rgba(255,255,255,0)}}
+.hx .hl>*{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.hx .hl>:nth-child(1){animation-delay:.05s}.hx .hl>:nth-child(2){animation-delay:.15s}.hx .hl>:nth-child(3){animation-delay:.25s}.hx .hl>:nth-child(5){animation-delay:.35s}.hx .hl>:nth-child(6){animation-delay:.45s}
+#plate{animation:pop 1s cubic-bezier(.2,.8,.2,1) both,floaty 5s ease-in-out 1s infinite}
+.ob{animation:rise .8s .5s cubic-bezier(.2,.8,.2,1) both,pulse 2.4s 1.4s infinite}
+.pill{animation:pillin .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.3s + var(--i)*.09s)}
+.hx .arrows{animation:rise .8s .6s cubic-bezier(.2,.8,.2,1) both}
+.pill:not(.act):hover{translate:-6px 0}
+/* --- mobile: footer off, hero on --- */
+@media(max-width:860px){
+.ft{display:none}
+.hero main.hx{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;min-height:0;max-width:none;margin:0;padding:calc(var(--hh,96px) + 16px) 16px 26px}
+.hx .hl{order:1;width:100%;display:flex;flex-direction:column;align-items:center}
+.hx .hc{order:2;width:100%;display:flex;flex-direction:column;align-items:center;margin-top:4px}
+.hx .hr{order:3;width:100%;padding:0}
+.hx .hl h2{font:700 11px 'Lato',sans-serif;letter-spacing:.4em;color:rgba(255,255,255,.8);margin-bottom:4px}
+.hero .hx .hl h3{font:900 32px/1.05 'Playfair Display',serif;margin:0 0 8px;color:#fff}
+.hero .hx .hl p{font-size:13px;max-width:300px;margin:0;color:rgba(255,255,255,.88);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hx .chips,.hx .info{display:none}
+#plate{width:min(66vw,270px);border-width:7px;box-shadow:0 0 0 10px rgba(255,255,255,.14),0 24px 40px rgba(0,0,0,.45)}
+.hero .hx .ob{margin-top:-22px;padding:13px 28px;font-size:13px;width:auto;flex:none;align-self:center}
+.hx .hq{position:relative;height:128px;overflow:hidden;width:100%}
+.hx .arrows{display:none}
+.pill{left:0;right:auto;width:112px;height:128px;padding:0;border-radius:18px;display:block;overflow:hidden;background:#222;box-shadow:0 8px 18px rgba(0,0,0,.3)}
+.pill.act{left:0;padding:0;background:#222}
+.pill>img{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;box-shadow:none}
+.pill>div{position:absolute;left:0;right:0;bottom:0;padding:24px 8px 8px;background:linear-gradient(transparent,rgba(0,0,0,.82));text-align:left}
+.pill b,.pill.act b{color:#fff;font-size:11px;letter-spacing:.02em}
+.pill span{display:none}
+.pill.nxt:before{content:'NEXT';position:absolute;top:7px;left:7px;z-index:2;background:#fff;color:#B22222;font:900 9px 'Lato',sans-serif;letter-spacing:.12em;padding:3px 7px;border-radius:10px}
+.band{padding-top:18px}
+}
 </style></head><body>
 
 <header><div class='logo' onclick="location.hash='home'" style='cursor:pointer'><svg class='lg' viewBox='0 0 64 56' aria-label='Charminar'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g fill='#fff'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg><span class='lt'><small>HYDERABAD</small><b>Meat<em>Hub</em></b></span></div><div class='loc' id='loc' onclick='openLoc()'><b id='lb1'>Set location &#9662;</b><span id='lb2'>Tap to choose delivery area</span></div><input class='search' placeholder='Search for any delicious...'>
@@ -355,17 +398,20 @@ const more=[
 const N=items.length,st=document.getElementById('stage');
 const plate=document.getElementById('plate'),qu=document.getElementById('queue');
 const imgs=items.map(it=>{const im=new Image();im.src=it[3];im.alt=it[0];im.draggable=false;plate.appendChild(im);return im});
-const els=items.map((it,i)=>{const d=document.createElement('div');d.className='pill';d.innerHTML=`<img src='${it[3]}' alt=''><div><b>${it[0]}</b><span>${it[1]}</span></div>`;d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<4)go(p)};qu.appendChild(d);return d});
-let off=0,tm;const PH=78,GAP=12;
+const els=items.map((it,i)=>{const d=document.createElement('div');d.className='pill';d.style.setProperty('--i',i);d.innerHTML=`<img src='${it[3]}' alt=''><div><b>${it[0]}</b><span>${it[1]}</span></div>`;d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<(mq.matches?6:4))go(p)};qu.appendChild(d);return d});
+let off=0,tm;const PH=78,GAP=12,MW=112,MG=10;const mq=matchMedia('(max-width:860px)');
 function place(){imgs.forEach((im,i)=>im.classList.toggle('on',i==off));
-els.forEach((d,i)=>{const p=(i-off+N)%N;let y,o=1;
-if(p<4)y=p*(PH+GAP);else if(p==N-1){y=-(PH+GAP);o=0}else{y=4*(PH+GAP);o=0}
-d.style.transform=`translateY(${y}px)`;d.style.opacity=o;d.classList.toggle('act',p==0);d.style.pointerEvents=p<4?'auto':'none'});
+els.forEach((d,i)=>{const p=(i-off+N)%N;let o=1,t;
+if(mq.matches){let x;if(p>=1&&p<=5)x=(p-1)*(MW+MG);else if(p==0||p==N-1){x=-(MW+MG);o=0}else{x=5*(MW+MG);o=0}t=`translateX(${x}px)`;if(p==0)o=0}
+else{let y;if(p<4)y=p*(PH+GAP);else if(p==N-1){y=-(PH+GAP);o=0}else{y=4*(PH+GAP);o=0}t=`translateY(${y}px)`}
+d.style.transform=t;d.style.opacity=o;d.classList.toggle('act',p==0);d.classList.toggle('nxt',p==1);d.style.pointerEvents=(mq.matches?(p>0&&p<6):p<4)?'auto':'none'});
 const it=items[off],e=[nm,ds,pr,ch,document.getElementById('inf')];e.forEach(x=>x.classList.add('out'));
 setTimeout(()=>{nm.textContent=it[0];ds.textContent=it[1];pr.textContent=it[2];document.getElementById('pr2').textContent=it[2];ch.innerHTML=meta[off].concat(['30 min delivery']).map(x=>'<span>'+x+'</span>').join('');const m=more[off];ii.src=it[3];ii.alt=it[0];ih.textContent='About this cut';ip.textContent=m[0];iu.innerHTML=m.slice(1).map(x=>'<li><b>'+x[0]+':</b> '+x[1]+'</li>').join('');e.forEach(x=>x.classList.remove('out'))},350)}
 function go(n){off=(off+n+N)%N;place();auto()}
 function auto(){clearInterval(tm);tm=setInterval(()=>{off=(off+1)%N;place()},4500)}
 document.querySelector('.down').onclick=()=>go(1);
+mq.addEventListener('change',()=>place());
+{let tx=0;const sg=document.getElementById('stage');sg.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});sg.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)go(d<0?1:-1)},{passive:true})}
 document.querySelector('.up').onclick=()=>go(-1);
 place();auto();
 const banners=[ // admin adds banners here, they auto-scroll in a loop
