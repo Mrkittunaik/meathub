@@ -232,6 +232,40 @@ body{background:#fff}
 .ft .cp{margin-top:40px;padding:18px 0;border-top:1px solid #222;text-align:center;font-size:13px;color:#8a8a8a}
 @media(max-width:860px){.ft .wrap{grid-template-columns:1fr 1fr}.ft{padding-bottom:70px}}
 @media(max-width:480px){.ft .wrap{grid-template-columns:1fr}}
+
+.plate .tag{position:absolute;left:50%;top:100%;transform:translate(-50%,10px);white-space:nowrap;background:#fff;color:#B22222;font-weight:900;font-size:clamp(10px,1.1vw,14px);padding:5px 12px;border-radius:20px;box-shadow:0 6px 14px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .4s}
+.plate .tag small{font-size:.75em;letter-spacing:.12em;color:#777;margin-right:6px}
+.plate.nxt .tag{opacity:1}
+.plate.nxt img{border-width:6px;box-shadow:0 0 0 6px rgba(255,255,255,.25),0 16px 30px rgba(0,0,0,.35)}
+.plate.main img{border-width:8px;box-shadow:0 0 0 12px rgba(255,255,255,.18),0 24px 50px rgba(0,0,0,.45)}
+
+/* --- compact hero: big image + square queue cards --- */
+.plate{width:var(--w);height:var(--h);aspect-ratio:auto;border-radius:var(--r,14px);transition:left .8s cubic-bezier(.65,0,.25,1),top .8s cubic-bezier(.65,0,.25,1),width .8s cubic-bezier(.65,0,.25,1),height .8s cubic-bezier(.65,0,.25,1),border-radius .8s,opacity .6s;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.plate img,.plate.main img,.plate.nxt img{border-radius:inherit;border:3px solid #fff;box-shadow:none;animation:none!important;transition:transform .6s}
+.plate.main img{border-width:5px}
+.plate:not(.main):hover img{transform:scale(1.07)}
+.plate .tag{left:0;right:0;top:auto;bottom:0;transform:none;border-radius:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;text-align:left;font-size:12px;padding:18px 10px 8px;box-shadow:none;opacity:1;white-space:normal;line-height:1.2;overflow:hidden;text-overflow:ellipsis}
+.plate .tag small{display:none}
+.plate.main .tag{opacity:0}
+.plate.nxt:before{content:'NEXT';position:absolute;top:8px;left:8px;z-index:2;background:#fff;color:#B22222;font:900 10px 'Lato',sans-serif;letter-spacing:.12em;padding:3px 8px;border-radius:10px}
+.plate.nxt{outline:3px solid #fff;outline-offset:-3px}
+@media(min-width:861px){
+.hero .arc,.hero .wm{display:none}
+.hero main{min-height:0;padding:92px clamp(20px,5vw,64px) 30px;gap:36px;grid-template-columns:.9fr 1.1fr;align-items:center}
+.hero .txt h2{font-size:30px}
+.hero .txt h3{font-size:40px;margin:2px 0 10px}
+.hero .txt p{margin-bottom:8px}
+.hero .price{margin-bottom:14px;font-size:22px}
+.hero .chips{margin-bottom:16px}
+.hero .info{padding:12px 14px;margin-bottom:16px;max-width:520px}
+.hero .info img{display:none}
+.hero .info p{font-size:13px;margin-bottom:6px;max-width:none}
+.hero .info ul{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0;font-size:13px}
+.hero .btn{padding:12px 34px}
+.hero .stage{aspect-ratio:660/440;max-width:680px}
+.hero .arrows button{top:calc(35% - 20px);bottom:auto;z-index:5;background:rgba(255,255,255,.92);box-shadow:0 4px 12px rgba(0,0,0,.25);border-radius:50%}
+.hero .arrows .up{left:14px}.hero .arrows .down{right:14px}
+}
 </style></head><body>
 
 <header><div class='logo' onclick="location.hash='home'" style='cursor:pointer'><svg class='lg' viewBox='0 0 64 56' aria-label='Charminar'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g fill='#fff'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg><span class='lt'><small>HYDERABAD</small><b>Meat<em>Hub</em></b></span></div><div class='loc' id='loc' onclick='openLoc()'><b id='lb1'>Set location &#9662;</b><span id='lb2'>Tap to choose delivery area</span></div><input class='search' placeholder='Search for any delicious...'>
@@ -288,14 +322,14 @@ const more=[
 ["Chicken leg quarters coated in a yoghurt and spice marinade. Roast, grill or air-fry with no prep.",["Cut","Leg quarters"],["Best for","Tandoori, grill"],["Storage","2 days chilled"]]];
 const N=items.length,st=document.getElementById('stage');
 // slots: [x%,y%,size%]  index0 = main, 1..5 = arc left->right
-const S=[[50,67,49],[8,56,9],[24,28,13],[51,15,19],[78,28,13],[94,56,9]];
+const S=[[50,35,100,66,22],[9.5,85,17.6,26.4,14],[29.5,85,17.6,26.4,14],[49.5,85,17.6,26.4,14],[69.5,85,17.6,26.4,14],[89.5,85,17.6,26.4,14]];
 const els=items.map((it,i)=>{const d=document.createElement('div');d.className='plate';d.style.setProperty('--d',(i%5*.5)+'s');
-const im=new Image();im.src=it[3];im.alt=it[0];im.draggable=false;d.appendChild(im);d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<6)go(p)};st.appendChild(d);return d});
+const im=new Image();im.src=it[3];im.alt=it[0];im.draggable=false;d.appendChild(im);const tg=document.createElement('span');tg.className='tag';tg.innerHTML='<small>NEXT</small>'+it[0];d.appendChild(tg);d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<6)go(p)};st.appendChild(d);return d});
 let off=0,tm;
 function place(){els.forEach((d,i)=>{let p=(i-off+N)%N,s;
-if(p<6){s=S[p];d.style.setProperty('--o',1)}else{s=p>=N-1?[S[0][0]-18,S[0][1]+10,0]:[S[5][0]+10,S[5][1]+10,0];d.style.setProperty('--o',0)}
-d.style.setProperty('--x',s[0]+'%');d.style.setProperty('--y',s[1]+'%');d.style.setProperty('--s',s[2]+'%');
-d.style.zIndex=p==0?2:1;d.classList.toggle('main',p==0);d.style.pointerEvents=p<6?'auto':'none'});
+if(p<6){s=S[p];d.style.setProperty('--o',1)}else{s=p>=N-1?[-12,85,17.6,26.4,14]:[112,85,17.6,26.4,14];d.style.setProperty('--o',0)}
+d.style.setProperty('--x',s[0]+'%');d.style.setProperty('--y',s[1]+'%');d.style.setProperty('--w',s[2]+'%');d.style.setProperty('--h',s[3]+'%');d.style.setProperty('--r',s[4]+'px');
+d.style.zIndex=p==0?2:1;d.classList.toggle('main',p==0);d.classList.toggle('nxt',p==1);d.style.pointerEvents=p<6?'auto':'none'});
 const it=items[off],e=[nm,ds,pr,ch,document.getElementById('inf')];e.forEach(x=>x.classList.add('out'));
 setTimeout(()=>{nm.textContent=it[0];ds.textContent=it[1];pr.textContent=it[2];ch.innerHTML=meta[off].concat(['30 min delivery']).map(x=>'<span>'+x+'</span>').join('');const m=more[off];ii.src=it[3];ii.alt=it[0];ih.textContent='About this cut';ip.textContent=m[0];iu.innerHTML=m.slice(1).map(x=>'<li><b>'+x[0]+':</b> '+x[1]+'</li>').join('');e.forEach(x=>x.classList.remove('out'))},350)}
 function go(n){off=(off+n+N)%N;place();auto()}
