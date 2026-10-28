@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hyderabad Meat Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fde4e4;--tx:#1c1c1c;--g:#d11a4f;--gl:#fbd3d8;--sh:rgba(0,0,0,.25);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box;margin:0}
@@ -266,6 +266,38 @@ body{background:#fff}
 .hero .arrows button{top:calc(35% - 20px);bottom:auto;z-index:5;background:rgba(255,255,255,.92);box-shadow:0 4px 12px rgba(0,0,0,.25);border-radius:50%}
 .hero .arrows .up{left:14px}.hero .arrows .down{right:14px}
 }
+
+/* --- premium red hero, plate + queue pills --- */
+.hero{background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.14),transparent 45%),linear-gradient(135deg,#B22222 0%,#7d1111 100%)}
+.pill{position:absolute;left:0;right:0;top:0;height:78px;display:flex;align-items:center;gap:16px;padding:0 22px 0 10px;background:#fff;border-radius:60px 0 0 60px;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.25);transition:transform .8s cubic-bezier(.65,0,.25,1),opacity .6s,left .6s,background .5s}
+.pill>img{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.pill b{display:block;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#1c1c1c;transition:color .5s}
+.pill span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;line-height:1.35;color:#666;margin-top:2px;transition:color .5s}
+.pill.act{background:#0d0d0d;left:-26px;padding-left:36px}
+.pill.act b{color:#fff}.pill.act span{color:#cfcfcf}
+#plate{position:relative;width:380px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:10px solid #fff;box-shadow:0 0 0 14px rgba(255,255,255,.14),0 30px 60px rgba(0,0,0,.5);background:#fff}
+#plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.2) rotate(-12deg);transition:opacity .8s,transform 1.1s cubic-bezier(.65,0,.25,1)}
+#plate img.on{opacity:1;transform:none}
+.ob{margin-top:-26px;position:relative;z-index:3;display:flex;align-items:center;gap:16px;background:#fff;color:#B22222;border-radius:40px;padding:15px 36px;font:900 15px 'Lato',sans-serif;letter-spacing:.06em;box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.ob i{width:34px;height:2px;background:#B22222;display:block}
+@media(min-width:861px){
+.hero main.hx{max-width:none;margin:0;min-height:0;display:grid;grid-template-columns:minmax(300px,1fr) auto minmax(340px,1fr);gap:44px;align-items:center;padding:96px 0 48px clamp(20px,5vw,64px)}
+.hx .hc{display:flex;flex-direction:column;align-items:center}
+.hx .hl h2{font:700 13px 'Lato',sans-serif;letter-spacing:.4em;color:rgba(255,255,255,.8);margin-bottom:8px}
+.hero .hx .hl h3{font:900 clamp(40px,4.4vw,64px)/1.02 'Playfair Display',serif;margin:0 0 14px;color:#fff}
+.hero .hx .hl p{font-size:14px;max-width:340px;color:rgba(255,255,255,.88);margin-bottom:14px}
+.hero .hx .chips span{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border-radius:20px;padding:6px 14px}
+.hero .hx .info{background:none;box-shadow:none;padding:0;margin:0;max-width:none}
+.hero .hx .info img,.hero .hx .info h4,.hero .hx .info p{display:none}
+.hero .hx .info,.hero .hx .info *{color:#fff}
+.hero .hx .info ul{display:flex;flex-direction:column;gap:4px;list-style:none;padding:0;font-size:13px}
+.hero .hx .info li b{color:rgba(255,255,255,.65)}
+.hx .hr{display:flex;flex-direction:column;gap:18px;padding-left:26px}
+.hx .hq{position:relative;height:348px}
+.hero .hx .arrows{display:flex;gap:10px}
+.hero .hx .arrows button{position:static;top:auto;left:auto;right:auto;transform:none}
+.hero .hx .arrows button:hover{transform:scale(1.1)}
+}
 </style></head><body>
 
 <header><div class='logo' onclick="location.hash='home'" style='cursor:pointer'><svg class='lg' viewBox='0 0 64 56' aria-label='Charminar'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g fill='#fff'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg><span class='lt'><small>HYDERABAD</small><b>Meat<em>Hub</em></b></span></div><div class='loc' id='loc' onclick='openLoc()'><b id='lb1'>Set location &#9662;</b><span id='lb2'>Tap to choose delivery area</span></div><input class='search' placeholder='Search for any delicious...'>
@@ -273,12 +305,11 @@ body{background:#fff}
 <button class="cart" data-cn aria-label="Cart" onclick="location.hash='cart'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9H7.5z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg><span id='cc'>Cart</span></button></header>
 <div class='lm' id='lm'><div class='lb' id='lbx'></div></div>
 <div id='v-home'>
-<div class='hero'><main>
-<div class="txt"><h2>Fresh</h2><h3 id="nm">Whole Chicken</h3><p id="ds"></p><div class="price" id="pr"></div><div class="chips" id="ch"></div><div class="info" id="inf"><img id="ii" alt=""><div><h4 id="ih"></h4><p id="ip"></p><ul id="iu"></ul></div></div><button class="btn">Order now</button></div>
-<div class="stage" id="stage"><svg class='wm' viewBox='0 0 64 56' aria-hidden='true'><g fill='currentColor'><rect x='2' y='12' width='7' height='42'/><rect x='14' y='12' width='7' height='42'/><rect x='43' y='12' width='7' height='42'/><rect x='55' y='12' width='7' height='42'/><path d='M1 12a4.5 5 0 0 1 9 0zM13 12a4.5 5 0 0 1 9 0zM42 12a4.5 5 0 0 1 9 0zM54 12a4.5 5 0 0 1 9 0z'/><circle cx='5.5' cy='5.5' r='1.3'/><circle cx='17.5' cy='5.5' r='1.3'/><circle cx='46.5' cy='5.5' r='1.3'/><circle cx='58.5' cy='5.5' r='1.3'/><rect x='21' y='24' width='22' height='30'/><rect x='21' y='20' width='22' height='4'/><path d='M23 20a3 4 0 0 1 6 0zM29 20a3 4 0 0 1 6 0zM35 20a3 4 0 0 1 6 0z'/><rect x='0' y='54' width='64' height='2'/></g><g style='fill:var(--bg)'><path d='M26 54V40a6 6 0 0 1 12 0V54z'/><rect x='2' y='28' width='7' height='1.5'/><rect x='14' y='28' width='7' height='1.5'/><rect x='43' y='28' width='7' height='1.5'/><rect x='55' y='28' width='7' height='1.5'/><rect x='2' y='40' width='7' height='1.5'/><rect x='14' y='40' width='7' height='1.5'/><rect x='43' y='40' width='7' height='1.5'/><rect x='55' y='40' width='7' height='1.5'/></g></svg>
-<svg class="arc" viewBox="0 0 660 470" preserveAspectRatio="none"><path d="M66 254 C90 150 200 60 337 56 C474 60 584 150 607 254" fill="none" stroke="#d11a4f" stroke-width="2" stroke-dasharray="14 18" stroke-linecap="round"/></svg>
-<div class="arrows"><button class="up" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 20V4M5 11l7-7 7 7"/></svg></button><button class="down" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg></button></div>
-</div></main></div>
+<div class='hero'><main class='hx'>
+<div class="txt hl"><h2>FRESH</h2><h3 id="nm">Whole Chicken</h3><p id="ds"></p><div class="price" id="pr" style="display:none"></div><div class="chips" id="ch"></div><div class="info" id="inf"><img id="ii" alt=""><div><h4 id="ih"></h4><p id="ip"></p><ul id="iu"></ul></div></div></div>
+<div class="hc" id="stage"><div id="plate"></div><button class="btn ob"><span id="pr2"></span><i></i>ORDER NOW</button></div>
+<div class="hr"><div class="hq" id="queue"></div><div class="arrows"><button class="up" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 20V4M5 11l7-7 7 7"/></svg></button><button class="down" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg></button></div></div>
+</main></div>
 <section class='band'><div class='wrap'><div class='bn'><div class='bt' id='bt'></div><button class='nx' id='bn' aria-label='Next'>&rsaquo;</button><div class='bd' id='bd'></div></div><div class='crw'><button class='cb l' id='cl' aria-label='Scroll left'>&lsaquo;</button><div class='cr' id='cr'></div><button class='cb r' id='crb' aria-label='Scroll right'>&rsaquo;</button></div></div></section>
 <section class='shop'><div class='wrap'><button class='fl'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round'><path d='M4 7h10M18 7h2M4 17h2M10 17h10'/><circle cx='16' cy='7' r='2'/><circle cx='8' cy='17' r='2'/></svg>Filters</button><div class='cl'><span id='cnt'></span></div><div class='pg' id='pg'></div></div></section>
 </div>
@@ -321,17 +352,16 @@ const more=[
 ["Cleaned chicken liver with the membrane removed. Fry with onion and pepper for a quick, rich masala.",["Cut","Whole, cleaned"],["Best for","Fry, masala"],["Storage","1 day chilled"]],
 ["Chicken leg quarters coated in a yoghurt and spice marinade. Roast, grill or air-fry with no prep.",["Cut","Leg quarters"],["Best for","Tandoori, grill"],["Storage","2 days chilled"]]];
 const N=items.length,st=document.getElementById('stage');
-// slots: [x%,y%,size%]  index0 = main, 1..5 = arc left->right
-const S=[[50,35,100,66,22],[9.5,85,17.6,26.4,14],[29.5,85,17.6,26.4,14],[49.5,85,17.6,26.4,14],[69.5,85,17.6,26.4,14],[89.5,85,17.6,26.4,14]];
-const els=items.map((it,i)=>{const d=document.createElement('div');d.className='plate';d.style.setProperty('--d',(i%5*.5)+'s');
-const im=new Image();im.src=it[3];im.alt=it[0];im.draggable=false;d.appendChild(im);const tg=document.createElement('span');tg.className='tag';tg.innerHTML='<small>NEXT</small>'+it[0];d.appendChild(tg);d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<6)go(p)};st.appendChild(d);return d});
-let off=0,tm;
-function place(){els.forEach((d,i)=>{let p=(i-off+N)%N,s;
-if(p<6){s=S[p];d.style.setProperty('--o',1)}else{s=p>=N-1?[-12,85,17.6,26.4,14]:[112,85,17.6,26.4,14];d.style.setProperty('--o',0)}
-d.style.setProperty('--x',s[0]+'%');d.style.setProperty('--y',s[1]+'%');d.style.setProperty('--w',s[2]+'%');d.style.setProperty('--h',s[3]+'%');d.style.setProperty('--r',s[4]+'px');
-d.style.zIndex=p==0?2:1;d.classList.toggle('main',p==0);d.classList.toggle('nxt',p==1);d.style.pointerEvents=p<6?'auto':'none'});
+const plate=document.getElementById('plate'),qu=document.getElementById('queue');
+const imgs=items.map(it=>{const im=new Image();im.src=it[3];im.alt=it[0];im.draggable=false;plate.appendChild(im);return im});
+const els=items.map((it,i)=>{const d=document.createElement('div');d.className='pill';d.innerHTML=`<img src='${it[3]}' alt=''><div><b>${it[0]}</b><span>${it[1]}</span></div>`;d.onclick=()=>{const p=(i-off+N)%N;if(p>0&&p<4)go(p)};qu.appendChild(d);return d});
+let off=0,tm;const PH=78,GAP=12;
+function place(){imgs.forEach((im,i)=>im.classList.toggle('on',i==off));
+els.forEach((d,i)=>{const p=(i-off+N)%N;let y,o=1;
+if(p<4)y=p*(PH+GAP);else if(p==N-1){y=-(PH+GAP);o=0}else{y=4*(PH+GAP);o=0}
+d.style.transform=`translateY(${y}px)`;d.style.opacity=o;d.classList.toggle('act',p==0);d.style.pointerEvents=p<4?'auto':'none'});
 const it=items[off],e=[nm,ds,pr,ch,document.getElementById('inf')];e.forEach(x=>x.classList.add('out'));
-setTimeout(()=>{nm.textContent=it[0];ds.textContent=it[1];pr.textContent=it[2];ch.innerHTML=meta[off].concat(['30 min delivery']).map(x=>'<span>'+x+'</span>').join('');const m=more[off];ii.src=it[3];ii.alt=it[0];ih.textContent='About this cut';ip.textContent=m[0];iu.innerHTML=m.slice(1).map(x=>'<li><b>'+x[0]+':</b> '+x[1]+'</li>').join('');e.forEach(x=>x.classList.remove('out'))},350)}
+setTimeout(()=>{nm.textContent=it[0];ds.textContent=it[1];pr.textContent=it[2];document.getElementById('pr2').textContent=it[2];ch.innerHTML=meta[off].concat(['30 min delivery']).map(x=>'<span>'+x+'</span>').join('');const m=more[off];ii.src=it[3];ii.alt=it[0];ih.textContent='About this cut';ip.textContent=m[0];iu.innerHTML=m.slice(1).map(x=>'<li><b>'+x[0]+':</b> '+x[1]+'</li>').join('');e.forEach(x=>x.classList.remove('out'))},350)}
 function go(n){off=(off+n+N)%N;place();auto()}
 function auto(){clearInterval(tm);tm=setInterval(()=>{off=(off+1)%N;place()},4500)}
 document.querySelector('.down').onclick=()=>go(1);
